@@ -17,6 +17,10 @@ public class HelloWorld {
                 ctx.result("Hello, World!");
             }
         });
+        app.get("users/{id}/post/{postId}", ctx -> {
+            ctx.result("User ID: " + ctx.pathParam("id"));
+            ctx.result("Post ID: " + ctx.pathParam("postId"));
+        });
         app.start(7070);
     }
 }
